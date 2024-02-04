@@ -9,7 +9,7 @@ pipeline {
         }
       stage('helm install') {
             steps {
-                sh 'helm upgrade --install spring $WORKSPACE --values $WORKSPACE/created-mariadb.yam --namespace database'
+                sh 'helm upgrade --install mariadb $WORKSPACE --values $WORKSPACE/created-mariadb.yam --namespace database'
             }
         }
       stage('pods status') {
