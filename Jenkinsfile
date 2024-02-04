@@ -17,7 +17,7 @@ pipeline {
         }
       stage('helm install') {
             steps {
-                sh 'helm upgrade --install mariadb $WORKSPACE --values $WORKSPACE/createat-mariadb.yaml --namespace database'
+                sh 'helm upgrade --install mariadb $WORKSPACE/database-helm --values $WORKSPACE/database-helm/createat-mariadb.yaml --namespace database'
             }
         }
       stage('pods status') {
